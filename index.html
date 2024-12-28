@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta name="google-site-verification" content="isqdQ25gPtBLOllVIKudmbcy70q7eiLALuQ7z19WBB8" />
+    <meta name="google-site-verification" content="uLcmMIvV4m8L8BNe5THxsMHwcimXB8MBujGLwIw6mBE" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Penghitung perkataan yang mudah dan pantas untuk mengira jumlah perkataan dalam teks.">
+    <meta name="keywords" content="penghitung perkataan, kalkulator perkataan, kira perkataan, aplikasi penghitung perkataan">
+    <meta name="author" content="Izzat Yahya">
+    <meta name="robots" content="index, follow">
+    <title>Penghitung Perkataan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f9;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #ads-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-link {
+            display: none;
+            text-align: center;
+        }
+
+        .ad-link img {
+            width: 100%;  
+            border-radius: 5px;
+        }
+
+        .ad-link p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Penghitung Perkataan</h1>
+    <p>Masukkan teks di bawah dan klik "Kira" untuk menghitung jumlah perkataan.</p>
+
+    <textarea id="inputText" placeholder="Masukkan teks di sini..."></textarea><br>
+    <button onclick="hitungPerkataan()">Kira</button>
+
+    <div id="hasil"></div>
+
+    <div id="ads-container">
+        <!-- Iklan 1 -->
+        <a href="https://vt.tiktok.com/ZS6r5vhwS/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/d1c1c17cce2543499a4018e1f863736f~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=93909&refresh_token=d269d36968c5b319b1aa7552c8de6994&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 1">
+            <p>Klik untuk lihat produk di tiktok kami</p>
+        </a>
+        <!-- Iklan 2 -->
+        <a href="https://vt.tiktok.com/ZS6raQwnB/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/51bb3dea5e264d41a6f3cb7f65e3e16a~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=48224&refresh_token=f3c37e15eeea588c6bf8c53af445c67e&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 2">
+            <p>Dapatkan segera produk ini di tiktok kami!</p>
+        </a>
+        <!-- Iklan 3 -->
+        <a href="https://vt.tiktok.com/ZS6raSpR1/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/8e8f87349fbd4fef880337b99019573a~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=85286&refresh_token=cc6a8e7988758c7835bc19e488c0d464&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 3">
+            <p>Kunjungi tiktok kami untuk lihat produk</p>
+        </a>
+        <!-- Iklan 4 -->
+        <a href="https://vt.tiktok.com/ZS6raxHSq/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/3b166a45f0c1417084dc9f285fb32c9e~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=54782&refresh_token=b05d73449f00d4c0051f91e7823681fd&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 4">
+            <p>Lihat video mengenai produk di tiktok kami</p>
+        </a>
+        <!-- Iklan 5 -->
+        <a href="https://vt.tiktok.com/ZS6rajp4C/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/9d61411d10314a2aa8bc0dc816708dbc~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=12230&refresh_token=32bc472b9dd7fcbc1dfdcbd7e27a1e40&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 5">
+            <p>Tekan link untuk lihat produk di tiktok kami</p>
+        </a>
+        <!-- Iklan 6 -->
+        <a href="https://vt.tiktok.com/ZS6rayuMr/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/9704241683614adb8cb4cac69f242e29~tplv-o3syd03w52-resize-jpeg:800:800.jpeg?dr=15584&nonce=1145&refresh_token=c9b54e44b47a25c87ba30e21b7e58e4e&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 6">
+            <p>Klik untuk lihat produk di tiktok kami</p>
+        </a>
+        <!-- Iklan 7 -->
+        <a href="https://vt.tiktok.com/ZS6raEchQ/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/bf17c40e7e0647f69d587d0f09e2bce6~tplv-o3syd03w52-resize-jpeg:800:800.jpeg?dr=15584&nonce=45282&refresh_token=dabc1dc093fea373a16cb9e34c514edc&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 7">
+            <p>Produk tersedia di tiktok kami. Kunjungi segera!</p>
+        </a>
+        <!-- Iklan 8 -->
+        <a href="https://vt.tiktok.com/ZS6rasgcn/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/cef5f6addeaa4c02886f07fd142eab9b~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=21703&refresh_token=d471886801368072b7a8005f09bbb5bd&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 8">
+            <p>Klik untuk lihat produk di tiktok kami</p>
+        </a>
+        <!-- Iklan 9 -->
+        <a href="https://vt.tiktok.com/ZS6rapHS9/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/7b96d7bcf92544a1a2e9a468606523cc~tplv-o3syd03w52-resize-jpeg:800:800.jpeg?dr=15584&nonce=11806&refresh_token=21d48b9538981350c7fcbef5b9f7d6c6&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 9">
+            <p>Beli produk di tiktok kami sekarang!</p>
+        </a>
+        <!-- Iklan 10 -->
+        <a href="https://vt.tiktok.com/ZS6ra7335/" target="_blank" class="ad-link">
+            <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/1d1816864e144b63a6497f89eadc8cea~tplv-aphluv4xwc-resize-jpeg:800:800.jpeg?dr=15584&nonce=88238&refresh_token=22c46aaaf87b48b4b7084728935fd695&from=1826719393&idc=sg1&ps=933b5bde&shcp=e1be8f53&shp=6ce186a1&t=555f072d" alt="Video 10">
+            <p>Lihat produk di tiktok kami</p>
+        </a>
+    </div>
+
+    <script>
+        function hitungPerkataan() {
+            var teks = document.getElementById("inputText").value;
+            var perkataan = teks.split(/\s+/).filter(function (item) { return item.length > 0; });
+            document.getElementById("hasil").innerHTML = "Jumlah perkataan: " + perkataan.length;
+        }
+
+        // Papar iklan secara rawak setiap 5 saat
+        let iklanIndex = 0;
+        const ads = document.querySelectorAll(".ad-link");
+        setInterval(function () {
+            ads.forEach(ad => ad.style.display = "none"); // Sembunyikan semua iklan
+            iklanIndex = (iklanIndex + 1) % ads.length; // Ubah indeks iklan secara rawak
+            ads[iklanIndex].style.display = "block"; // Papar iklan baru
+        }, 20000); // Tukar iklan setiap 5 saat
+    </script>
+
+</body>
+</html>
+
+
